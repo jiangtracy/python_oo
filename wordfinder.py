@@ -1,5 +1,7 @@
 class WordFinder:
-    """Word Finder: finds random words from a dictionary."""
+    """Word Finder: finds random words from a dictionary.
+    
+    """
     skip_initial = []
 
     def __init__(self, path):
@@ -56,7 +58,21 @@ class WordFinder:
 class SpecialWordFinder(WordFinder):
     """ Works like a WordFinder instance but ignores blank lines and
         hash symbols (comment lines)
+
+        >>> spec_word_finder = SpecialWordFinder("special_words.txt")
+        4 words read
+
+        >>> spec_word_finder.random() in ["kale", "parsnips", "apple", "mango"]
+        True
+
+        >>> spec_word_finder.random() in ["kale", "parsnips", "apple", "mango"]
+        True
+
+        >>> spec_word_finder.random() in ["kale", "parsnips", "apple", "mango"]
+        True
+
     """
+
     skip_initial = ['#']
 
     # def __init__(self, path):
