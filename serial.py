@@ -23,15 +23,14 @@ class SerialGenerator:
         '''Create a serial number generator starting from start'''
 
         self.start = start
-        self.offset = -1
+        self.next = start - 1
 
     def generate(self):
         '''Generate a new serial number that's next in sequence'''
 
-        self.offset += 1
-        return self.start + self.offset
-    
+        self.next += 1
+        return self.next
+
     def reset(self):
         '''Reset serial number sequece back to start number'''
-        self.offset = -1
-    
+        self.next = self.start - 1
